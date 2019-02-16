@@ -103,7 +103,7 @@ function progressbars() {
         var progress = document.createElement("DIV");
         progress.className = "progress";
         var progress_bar = document.createElement("DIV");
-        progress_bar.className = "progress-bars";
+        progress_bar.className = "progress-bars progress-bar";
         progress.appendChild(progress_bar);
         progresspanel.appendChild(pfagmal);
         progresspanel.appendChild(progress);
@@ -185,39 +185,17 @@ function checkBoksCheck(tilKlasse) {
     document.getElementById("topprog").style.width = checkProcent;
     
     var progress_bars = document.getElementsByClassName("progress-bars");
-    
-    for (i=0; i<progress_bars.length;i++) {
-        var faerdighedFagmal = document.getElementsByClass(keyz[i]).length;
-        /*for (x in faerdighedFagmal) {
-            if x.classList.contains() 
-        }*/
-        
-        // Hvor mange færdigheder der hører til et givent fagmål fagmal_faerdig[keyz[i]]
-        // Hvor mange færdigheder der er aktiverede aktiveCheck
-        // Id af færdigheder som hører til givent fagmål document.getElementsByClassName(keyz[0])
-        
+    for (i=0; i<progress_bars.length ;i++) {
+        var faerdighedFagmal = document.getElementsByClassName(keyz[i]);
+        var getit = 0;
+        for (j=0; j<faerdighedFagmal.length; j++) {
+            if(faerdighedFagmal[j].classList.contains("aktiv")) {
+                getit += 1;
+            } 
+        }
+        var samregn = getit / faerdighedFagmal.length * 100;
+        var tilstreng = String(samregn).concat("%");
+        progress_bars[i].style.width = tilstreng;
+        progress_bars[i].innerHTML = tilstreng;
     }
-    
-    //Find checkbokse efter input-klasser (fagmal).
-    //Find topprogbar efter id.
-    //Omregn antal aktiverede checkbokse i sæt til procent af total.
-    //Vis procent i topprogbar. Se original pwidg
 }
-
-/*Bladre igennem fagmal og kolonner - hver kolonne skal kun have de færdigheder som hører til*/
-    
-    
-    /*for (i in fagmal_faerdig) {
-        
-    }*/
-/* 
-Loop gennem object nøgler
-var x;
- for (x in fagmal_faerdig) {
-        alert(x);
-    }
-    
-var faerdig = Objects.keys(fagmal_faerdig).length;
-
-alert(fagmal_faerdig[xstring][1]);
-*/
