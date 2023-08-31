@@ -7,6 +7,10 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
   <a-scene embedded arjs="trackingMethod: best;">
+    <a-assets>
+      <!-- Replace 'path/to/your/video.mp4' with your video file's URL -->
+      <video id="my-video" src="http://info.vestfyns.dk/skills/Pap_femten.mp4" autoplay loop crossorigin="anonymous"></video>
+    </a-assets>
 
    <a-marker preset="hiro">
      <a-entity position="0 0.5 0" scale="0.5 0.5 0.5" gltf-model="studenterblender2ARtest.gltf"> 
