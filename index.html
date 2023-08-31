@@ -8,12 +8,12 @@
 <body style="margin: 0; overflow: hidden;">
   <a-scene embedded arjs="trackingMethod: best;">
     <a-assets>
-      <a-asset-item id="tree" src="studenterblender2ARtest.gltf"></a-asset-item>
+      <video id="my-video" src="pap2.mp4" autoplay loop crossorigin="anonymous"></video>
     </a-assets>
 
-   <!-- <a-marker preset="hiro"> -->
-      <a-entity gltf-model="#tree"></a-entity>
-    <!-- /a-marker -->
+   <a-marker preset="hiro">
+      <a-video src="#my-video" width="2" height="1" position="0 0 0"></a-video>
+    </a-marker>
     
     <a-entity camera></a-entity>
   </a-scene>
