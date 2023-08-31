@@ -13,11 +13,22 @@
     </a-assets -->
 
    <a-marker preset="hiro">
-     <a-entity position="0 0.5 0" scale="0.1 0.1 0.1" rotation="-45 -45 -45" gltf-model="studenterblender2ARtest.gltf"> 
+     <a-entity id="model" position="0 0.5 0" scale="0.1 0.1 0.1" rotation="-45 -45 -45" gltf-model="studenterblender2ARtest.gltf"> 
        </a-entity>
     </a-marker>
     
     <a-entity camera></a-entity>
+    
+    <script>
+      // Get the model entity
+      const model = document.getElementById('model');
+
+      // Add a click listener
+      model.addEventListener('click', function() {
+        // Navigate to a new website when the model is clicked
+        window.location.href = 'https://www.vestfyns.nu';
+      });
+    </script>
   </a-scene>
 </body>
 </html>
