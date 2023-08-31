@@ -27,7 +27,10 @@ AFRAME.registerComponent('markerhandler', {
         const aEntity = document.querySelector("#animated-model");
 
         // every click, we make our model grow in size :)
-        animatedMarker.addEventListener('click', function(ev, target){
+        animatedMarker.addEventListener('click', function(){
+            window.location.href = "https://www.vestfyns.nu";
+        });
+        aEntity.addEventListener('click', function(){
             window.location.href = "https://www.vestfyns.nu";
         });
 }});
